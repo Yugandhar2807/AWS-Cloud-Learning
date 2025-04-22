@@ -1,0 +1,25 @@
+# 🚀 AWS EC2 Instance Setup Guide
+This document contains the steps I followed to launch and configure a basic EC2 instance using the AWS Free Tier. This is part of my learning from the [AWS Cloud Technical Essentials](https://www.coursera.org/learn/aws-cloud-technical-essentials) course.
+---
+## 📌 Objectives
+- Create and launch a virtual server using Amazon EC2
+- Understand instance types, AMIs, and key pairs
+- Connect to the instance using SSH
+--
+## 🔧 Steps Performed
+### 1. **Login to AWS Console**
+- URL: https://console.aws.amazon.com/
+- Created a new **Free Tier** account
+### 2. **Navigate to EC2 Dashboard**
+- Selected **EC2** service from the AWS Management Console
+### 3. **Launch Instance**
+- Chose **Amazon Linux 2 AMI**
+- Selected instance type: `t2.micro` (Free Tier eligible)
+- Configured storage: Default 8 GB
+- Created new **key pair** (PEM file)
+- Allowed **SSH** traffic in the security group
+### 4. **Connect to Instance**
+Used terminal to connect:
+```bash
+chmod 400 your-key-name.pem
+ssh -i "your-key-name.pem" ec2-user@<your-public-ec2-ip>
